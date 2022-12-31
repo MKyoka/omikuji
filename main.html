@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lag="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>おみくじ</title>
+	<style>
+		body{
+			background-repeat:  no-repeat;                                      
+    		background-size:contain;                              
+    		width:350px; height:350px;
+			background-image:url('web5.jpg');
+		}
+		div
+		{
+			text-align: center;
+		}
+		button{
+			display: inline-block;
+			width:300px;height:50px;
+			text-decoration: none;
+			background: #668ad8;
+			color: #FFF;
+			border-bottom: solid 4px #627295;
+			border-radius: 5px;
+			font-size:30px
+		}
+		button:active {
+ 			-webkit-transform: translateY(4px);
+			transform: translateY(4px);/*下に動く*/
+			border-bottom: none;/*線を消す*/
+		}
+		#result{
+			color:red;
+ 			font-size:65px;
+		}
+		p{
+			font-size:25.5px;
+		}
+	</style>
+</head>
+
+<script>
+	window.onload = function () {
+		const list = ["大吉","吉","中吉","小吉","末吉","凶","大凶"];
+
+		document.getElementById("button").onclick = function () {
+			var random = Math.floor(Math.random() * list.length);
+			document.getElementById("result").textContent = list[random];
+		}
+	}
+</script>
+
+<body>
+	<div>
+		<p>今年の運勢は？</p>
+		<button id="button" class="button">
+			おみくじを引く
+		</button>
+		<p id="result"></p>
+	</div>
+</body>
+
+</html>
